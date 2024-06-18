@@ -1,6 +1,6 @@
 type Props = {
   deleteAllCompleted: () => void;
-}
+};
 
 export const TodoSummary = ({ deleteAllCompleted }: Props) => {
   return (
@@ -9,5 +9,5 @@ export const TodoSummary = ({ deleteAllCompleted }: Props) => {
         完了したTodoを削除
       </button>
     </div>
-  )
-}
+  );
+};

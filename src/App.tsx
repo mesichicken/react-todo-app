@@ -13,13 +13,13 @@ function App() {
 
     // 配列に変換
     return JSON.parse(localStrageTodoList ?? '[]');
-  })
+  });
 
   // 第2引数のtodoListの値が変更されると発火
   useEffect(() => {
     // ローカルストレージに保存
     localStorage.setItem('todoList', JSON.stringify(todoList));
-  }, [todoList])
+  }, [todoList]);
 
   // 対象のTodoの完了を変更
   const changeCompleted = (id: number) => {
@@ -50,27 +50,27 @@ function App() {
 
       return [newTodo, ...prevTodoList];
     });
-  }
+  };
 
   const deleteTodo = (id: number) => {
     setTodoList((prevTodoList) => {
       return prevTodoList.filter((todo) => {
         return todo.id !== id;
       });
-    })
+    });
   };
 
   const deleteAllCompleted = () => {
     setTodoList((prevTodoList) => {
       return prevTodoList.filter((todo) => !todo.completed);
-    })
-  }
+    });
+  };
 
   return (
     <main className="mx-auto mt-10 max-w-xl space-y-10">
       <h1 className="text-center text-4xl">Todoアプリ</h1>
       <div className="space-y-5">
-        <AddTodoForm  addTodo={addTodo}/>
+        <AddTodoForm addTodo={addTodo} />
         <div className="space-y-5 rounded bg-slate-200 p-5">
           <TodoList
             todoList={todoList}

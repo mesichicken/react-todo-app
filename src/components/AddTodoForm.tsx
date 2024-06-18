@@ -3,7 +3,7 @@ import { Plus } from 'lucide-react';
 
 type Props = {
   addTodo: (title: string) => void;
-}
+};
 
 export const AddTodoForm = ({ addTodo }: Props) => {
   const [inputValue, setInputValue] = useState('');
@@ -12,13 +12,10 @@ export const AddTodoForm = ({ addTodo }: Props) => {
     e.preventDefault();
     addTodo(inputValue);
     setInputValue('');
-  }
+  };
 
   return (
-    <form
-      className="flex"
-      onSubmit={onSubmit}
-    >
+    <form className="flex" onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="新しいTodoを入力してください"
@@ -34,5 +31,5 @@ export const AddTodoForm = ({ addTodo }: Props) => {
         <Plus className="text-white" />
       </button>
     </form>
-  )
-}
+  );
+};
